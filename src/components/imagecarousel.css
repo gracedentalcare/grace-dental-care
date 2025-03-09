@@ -1,0 +1,144 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+  }
+  .caption{
+    padding-top: 40px;
+
+    text-align: center;
+    font-size: 2rem;
+    color: #571d82;
+    background: #f7f7f7;
+  }
+  
+  .carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 40px;
+
+    height: 3500px;
+    max-height: 350px;
+    background: #f7f7f7;
+  }
+  
+  .carousel img {
+    position: absolute;
+    max-width: 100%;
+    max-height: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    /* height: auto;
+    width: auto; */
+    object-fit: fill;
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    opacity: 0;
+    transform: scale(0.9);
+    cursor: pointer;
+  }
+  
+  .carousel img.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+  
+  .carousel img.hidden {
+    opacity: 0;
+    z-index: 0;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0px 5px;
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .close:hover {
+    color: white;
+    background-color: black;
+    scale: 1.1;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Add navigation dots for better UX */
+  .carousel-dots {
+    background: #f7f7f7;
+
+    display: flex;
+    justify-content: center;
+    padding: 30px 0 0px 0;
+    
+  }
+  
+  .carousel-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .carousel-dots .dot.active {
+    background: #571d82; /* Highlighted color for active dot */
+  }
+  
+  @media (max-width:740px){
+    .carousel{
+        height: 300px;
+    }
+  }
+  @media (max-width:550px){
+    .carousel{
+        height: 200px;
+    }
+  }

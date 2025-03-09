@@ -1,0 +1,115 @@
+.testimonial-slider {
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* Default to column for smaller screens */
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid #c9c9c9;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.testimonial-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    gap: 10px; /* Adds spacing between image and text */
+}
+
+.testimonial-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto; /* Center the image */
+}
+
+.testimonial-text {
+    max-width: 100%;
+}
+
+.testimonial-text h2 {
+    color: #571d82;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.testimonial-text p {
+    font-size: 1rem;
+    margin-bottom: 18px;
+    color: #666;
+}
+
+.testimonial-text h4 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.problem{
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.testimonial-controls {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.testimonial-controls button {
+    background-color: #571d82;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-controls button:hover {
+    background-color: #fff;
+    color: #571d82;
+    border: 1px solid;
+}
+
+/* Responsive adjustments */
+@media (min-width: 660px) {
+    .testimonial-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .testimonial-image {
+        width: 150px;
+        height: 150px;
+        margin-right: 20px;
+    }
+
+    .testimonial-text {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 900px) {
+    .testimonial-slider {
+        flex-direction: row;
+    }
+    
+    .testimonial-controls {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+}

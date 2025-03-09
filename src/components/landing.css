@@ -1,0 +1,24 @@
+.landing-container{
+    margin-top: 55px;
+}
+
+.landing-image img{
+    width: 100%;
+}
+#land2{
+    display: none;
+}
+
+@media(max-width:820px){
+    .landing-container{
+        margin-top: 45px;
+    }
+    #land2{
+        display: block;
+    }
+    #land1{
+        display: none;
+    }
+
+
+}

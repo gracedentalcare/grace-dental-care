@@ -1,0 +1,9 @@
+/* App.css */
+.hidden {
+    display: none; /* Hide content while loading */
+}
+
+.app-content {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}

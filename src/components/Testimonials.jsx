@@ -1,38 +1,42 @@
 import React, { useState, useEffect } from "react";
 import './testimonials.css'
+import test1 from "./images/test-1.jpg"
+import test2 from "./images/test-2.jpg"
+import test3 from "./images/test-3.jpg"
+import test4 from "./images/test-4.jpg"
 
 const testimonials = [
     {
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGV8ZW58MHx8MHx8fDA%3D", 
+        image: test1, 
         title: "MY GRACE EXPERIENCE",
         description:
             "The staff here is incredibly kind and professional. Dr. Bibechana took the time to answer all my questions, and my teeth cleaning was done so gently. I’m definitely coming back for regular check-ups!",
-        name: "Martha Selmon",
+        name: "Pawan Acharya",
         problem: "Scaling",
     },
     {
-        image: "https://plus.unsplash.com/premium_photo-1689539137236-b68e436248de?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D",
+        image: test2,
+        title: "MY GRACE EXPERIENCE",
+        description:
+            "I’ve always dreaded going to the dentist, but my experience here was fantastic! My treatment was handled smoothly, and the whole team was supportive and professional. Truly a painless experience.",
+        name: "Krizma Magar",
+        problem: "Dental Treatment",
+    },
+    {
+        image: test3,
         title: "MY GRACE EXPERIENCE",
         description:
             "I had a filling done last week, and I couldn’t be happier with the care I received. The procedure was quick, and Dr. Mahat made sure I was comfortable throughout. I’ve already recommended them to my family!",
-        name: "Rahul Sharma",
+        name: "Ujjwal K.C.",
         problem: "Cavity Filling",
     },
     {
-        image: "https://plus.unsplash.com/premium_photo-1689977968861-9c91dbb16049?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8fDA%3D",
+        image: test4,
         title: "MY GRACE EXPERIENCE",
         description:
-            "I’ve always dreaded going to the dentist, but my experience here was fantastic! My root canal was handled smoothly, and the whole team was supportive and professional. Truly a painless experience.",
-        name: "Anjali Mehta",
-        problem: "Root Canal",
-    },
-    {
-        image: "https://plus.unsplash.com/premium_photo-1682089810582-f7b200217b67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJ3xlbnwwfHwwfHx8MA%3D%3D",
-        title: "MY GRACE EXPERIENCE",
-        description:
-            "The facilities are clean, and the staff is welcoming. I had a whitening treatment that turned out amazing! I feel more confident with my smile now and appreciate the quality of care here.",
-        name: "Rohit Gupta",
-        problem: "Teeth Whitening",
+            "यहाँको सेवा धेरै राम्रो छ। ठाउँ सफा छ र सबै जना असल छन्। मैले दाँत राख्ने उपचार गराएँ, अहिले राम्रोसँग खान र मुस्कुराउन सक्छु। उपचार राम्रो भयो, धेरै खुसी छु।",
+        name: "Maiya Devi Khaniya",
+        problem: "Teeth Implant",
     },
 ];
 

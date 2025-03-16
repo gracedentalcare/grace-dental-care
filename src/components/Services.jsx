@@ -1,7 +1,5 @@
-import { useState, useEffect} from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-
+import { useState } from "react";
+import { motion } from "framer-motion";
 import "./services.css";
 import image1 from './images/Treatments/1.png';
 import image2 from './images/Treatments/2.png';
@@ -18,13 +16,9 @@ import image12 from './images/Treatments/12.png';
 import image13 from './images/Treatments/13.png';
 
 function Services() {
-    useEffect(() => {
-        AOS.init({ duration: 3000 });
-    }, []);
-
     const services = [
         'Extraction', 'Oral Cavity', 'Dental Crown', 'Dental Calculus', 'Dental Implant',
-        'Braces', 'Denture', 'Teeth Whitening', 'Veneers', 'Othodontics', 'Dental Bridge', 'Caries', 'Scaling'
+        'Braces', 'Denture', 'Teeth Whitening', 'Veneers', 'Orthodontics', 'Dental Bridge', 'Caries', 'Scaling'
     ];
 
     const images = [
@@ -41,22 +35,39 @@ function Services() {
     return (
         <>
             <div className="services-container">
-                <h1>All Your Dental Needs in One Place</h1>
+                <motion.h1 
+                    initial={{ opacity: 0, y: -20 }} 
+                    whileInView={{ opacity: 1, y: 0 }} 
+                    transition={{ duration: 0.6 }}
+                >
+                    All Your Dental Needs in One Place
+                </motion.h1>
                 <div className={`services-content ${showMore ? 'expanded' : ''}`}>
                     {services.map((service, index) => (
-                        <div key={index} className="services-card" data-aos="fade-up" data-aos-duration="600">
+                        <motion.div 
+                            key={index} 
+                            className="services-card"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8}}
+                        >
                             <div className="services-image">
                                 <img src={images[index]} alt={service} />
                             </div>
                             <span>{service}</span>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
             <div className="showmore-btn">
-                <button id="services-showmore" onClick={handleShow}>
+                <motion.button 
+                    id="services-showmore" 
+                    onClick={handleShow}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                >
                     {showMore ? "-- Show Less --" : "-- Show More --"}
-                </button>
+                </motion.button>
             </div>
         </>
     );

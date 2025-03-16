@@ -1,10 +1,9 @@
-import './faqs.css'
-import faqimage from './images/faqs.png'
-import React,{useState} from 'react';
-import "aos/dist/aos.css";
+import './faqs.css';
+import faqimage from './images/faqs.png';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
-function Faqs(){
-
+function Faqs() {
     const faqs = [
         {
             question: "What dental services are provided at your clinic?",
@@ -27,38 +26,52 @@ function Faqs(){
             answer: "Maintain good oral hygiene by brushing twice a day with fluoride toothpaste, flossing daily, eating a balanced diet, limiting sugary foods and drinks, and attending regular dental check-ups and cleanings."
         }
     ];
-    
-    // State for tracking open/closed state of each FAQ
+
     const [openIndex, setOpenIndex] = useState(null);
-    
+
     const handleClick = (index) => {
         setOpenIndex(openIndex === index ? null : index);
     };
-    
-
-
 
     return (
         <div className="faq-container" id='faq-container'>
             <div className="faq-image">
-                <img src={faqimage} alt="" />
+                <motion.img 
+                    src={faqimage} 
+                    alt="" 
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                    viewport={{ once: true }}
+                />
             </div>
             <div className="faq-questions">
                 {faqs.map((faq, index) => (
-                    <div key={index} data-aos="fade-up" data-aos-duration="800">
-                        <div className={`question${index + 1}`} onClick={() => handleClick(index)} >
+                    <motion.div 
+                        key={index} 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: false }}
+                    >
+                        <div className={`question${index + 1}`} onClick={() => handleClick(index)}>
                             {faq.question}
                             <a><i className={`bi ${openIndex === index ? 'bi-chevron-up' : 'bi-chevron-down'}`}></i></a>
                         </div>
                         
-                        <div className={`anscss ${openIndex === index ? 'show' : ''}`}>
+                        <motion.div 
+                            className={`anscss ${openIndex === index ? 'show' : ''}`}
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={openIndex === index ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
+                            transition={{ duration: 0.3 }}
+                        >
                             {faq.answer}
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 ))}
             </div>
         </div>
     );
-    
 }
-export default Faqs
+
+export default Faqs;

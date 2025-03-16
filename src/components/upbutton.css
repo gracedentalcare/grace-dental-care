@@ -18,10 +18,18 @@
     transform: translateY(30px); /* Initially hidden below */
     transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
     pointer-events: none; /* Prevent interaction when invisible */
+    cursor: pointer;
 }
 
 #upbutton.showbutton {
     opacity: 1;
     transform: translateY(0); /* Move to visible position */
     pointer-events: auto; /* Enable interaction */
+}
+
+#upbutton:hover{
+    background: #4b1970;
+    scale: 1.02;
+    font-size: 21px;
+
 }
